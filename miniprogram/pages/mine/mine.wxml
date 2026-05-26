@@ -1,0 +1,72 @@
+<view class="container">
+  <view class="card user-card">
+    <view class="user-avatar">
+      <text class="avatar-icon">👤</text>
+    </view>
+    <view class="user-info">
+      <text class="user-name">美食爱好者</text>
+      <text class="user-desc">已下单 {{ userInfo?.historyOrders?.length || 0 }} 次</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title" bindtap="goToPreferences">
+      <view class="title-left">
+        <text class="text-lg font-bold">🎯 我的口味偏好</text>
+      </view>
+      <view class="title-right">
+        <text class="text-muted text-sm">编辑</text>
+        <text class="arrow">›</text>
+      </view>
+    </view>
+    
+    <view wx:if="{{ userInfo?.preferenceTags?.length > 0 }}" class="tag-list">
+      <view wx:for="{{ getTagNames(userInfo.preferenceTags) }}" wx:key="*this" class="tag-item">
+        {{ item }}
+      </view>
+    </view>
+    
+    <view wx:else class="empty-state">
+      <text class="text-muted">尚未设置口味偏好</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">
+      <view class="title-left">
+        <text class="text-lg font-bold">📝 历史订单</text>
+      </view>
+      <view wx:if="{{ historyOrders.length > 0 }}" class="title-right" bindtap="handleClearOrders">
+        <text class="text-muted text-sm">清空</text>
+      </view>
+    </view>
+    
+    <view wx:if="{{ historyOrders.length > 0 }}" class="order-list">
+      <view wx:for="{{ historyOrders }}" wx:key="timestamp" class="order-item">
+        <view class="order-info">
+          <text class="order-dish">{{ item.dishName }}</text>
+          <text class="order-shop text-muted text-sm">{{ item.shopName }}</text>
+        </view>
+        <view class="order-detail">
+          <text class="order-price">¥{{ item.price }}</text>
+          <text class="order-time text-muted text-sm">{{ formatTime(item.timestamp) }}</text>
+        </view>
+      </view>
+    </view>
+    
+    <view wx:else class="empty-state">
+      <text class="empty-icon">🍽️</text>
+      <text class="empty-text">暂无订单记录</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">
+      <text class="text-lg font-bold">ℹ️ 关于</text>
+    </view>
+    <view class="about-content">
+      <text class="text-muted text-sm">外卖推荐小程序 v1.0</text>
+      <text class="text-muted text-sm mt-2">基于大模型的智能点餐推荐</text>
+    </view>
+  </view>
+</view>

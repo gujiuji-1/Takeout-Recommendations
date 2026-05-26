@@ -1,0 +1,65 @@
+<view class="container">
+  <view class="card">
+    <view class="section-title">
+      <text class="text-xl font-bold">智能点餐推荐</text>
+      <text class="text-muted text-sm ml-2">输入预算，为您定制菜单</text>
+    </view>
+    
+    <view class="input-group">
+      <text class="input-label">预期价格</text>
+      <view class="input-wrap">
+        <text class="currency">¥</text>
+        <input 
+          class="budget-input" 
+          type="digit" 
+          placeholder="请输入预算金额" 
+          value="{{ budget }}"
+          bindinput="handleBudgetInput"
+        />
+      </view>
+    </view>
+
+    <view 
+      class="btn-primary" 
+      bindtap="handleRecommend"
+      disabled="{{ isLoading }}"
+    >
+      <text wx:if="{{ !isLoading }}">🍽️ 帮我推荐</text>
+      <text wx:else>加载中...</text>
+    </view>
+  </view>
+
+  <view wx:if="{{ showRecommendations }}" class="card">
+    <view class="recommendation-header">
+      <text class="text-lg font-bold">📋 为您推荐</text>
+    </view>
+    
+    <view class="reason-box">
+      <text class="text-muted">{{ recommendationReason }}</text>
+    </view>
+
+    <view class="dish-list">
+      <view 
+        wx:for="{{ recommendations }}" 
+        wx:key="_id" 
+        class="dish-item"
+        data-dish="{{ item }}"
+        bindtap="handleOrder"
+      >
+        <view class="dish-info">
+          <text class="dish-name">{{ item.name }}</text>
+          <text class="dish-shop text-muted text-sm">{{ item.shopName }}</text>
+        </view>
+        <view class="dish-price">
+          <text class="price-tag">¥{{ item.price }}</text>
+          <text class="order-btn">点单</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="total-row">
+      <text class="text-muted">预估总价</text>
+      <text class="total-price">¥{{ recommendations.reduce((sum, item) => sum + item.price, 0).toFixed(2) }}</text>
+    </view>
+  </view>
+</view>

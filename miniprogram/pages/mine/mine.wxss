@@ -1,0 +1,123 @@
+.user-card {
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+}
+
+.user-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24rpx;
+}
+
+.avatar-icon {
+  font-size: 48rpx;
+}
+
+.user-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.user-desc {
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 8rpx;
+  display: block;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.title-right {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 32rpx;
+  color: #ccc;
+  margin-left: 8rpx;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.tag-item {
+  padding: 12rpx 24rpx;
+  background: #fff5f5;
+  border-radius: 24rpx;
+  font-size: 26rpx;
+  color: #ff6b6b;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx;
+}
+
+.empty-icon {
+  font-size: 64rpx;
+  margin-bottom: 16rpx;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.order-list {
+  margin-top: 8rpx;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.order-dish {
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.order-shop {
+  margin-top: 6rpx;
+  display: block;
+}
+
+.order-price {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #ff6b6b;
+}
+
+.order-time {
+  display: block;
+  text-align: right;
+  margin-top: 6rpx;
+}
+
+.about-content {
+  padding: 8rpx 0;
+}

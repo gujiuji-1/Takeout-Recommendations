@@ -1,0 +1,103 @@
+.section-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+
+.input-group {
+  margin-bottom: 24rpx;
+}
+
+.input-label {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 12rpx;
+  display: block;
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  background: #f8f8f8;
+  border-radius: 12rpx;
+  padding: 0 24rpx;
+  height: 88rpx;
+}
+
+.currency {
+  font-size: 32rpx;
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.budget-input {
+  flex: 1;
+  font-size: 32rpx;
+  margin-left: 12rpx;
+}
+
+.recommendation-header {
+  margin-bottom: 20rpx;
+}
+
+.reason-box {
+  background: #fff8f0;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  margin-bottom: 24rpx;
+}
+
+.dish-list {
+  margin-bottom: 24rpx;
+}
+
+.dish-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.dish-item:last-child {
+  border-bottom: none;
+}
+
+.dish-name {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333;
+}
+
+.dish-shop {
+  margin-top: 8rpx;
+  display: block;
+}
+
+.dish-price {
+  display: flex;
+  align-items: center;
+}
+
+.order-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+  color: #fff;
+  font-size: 24rpx;
+  padding: 12rpx 24rpx;
+  border-radius: 20rpx;
+  margin-left: 20rpx;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20rpx;
+  border-top: 1rpx dashed #ddd;
+}
+
+.total-price {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #ff6b6b;
+}

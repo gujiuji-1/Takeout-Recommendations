@@ -1,0 +1,58 @@
+<view class="container">
+  <view class="card">
+    <view class="section-header">
+      <text class="text-lg font-bold">🍽️ 选择您喜欢的口味</text>
+      <text class="text-muted text-sm">（可多选）</text>
+    </view>
+    
+    <view class="tag-list">
+      <view 
+        wx:for="{{ tags }}" 
+        wx:key="id" 
+        class="tag-item"
+        data-tag-id="{{ item.id }}"
+        bindtap="toggleTag"
+      >
+        <view class="tag-content {{ item.selected ? 'selected' : '' }}">
+          <text>{{ item.name }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-header">
+      <text class="text-lg font-bold">🥘 选择您喜欢的菜品</text>
+      <text class="text-muted text-sm">（至少选择3道）</text>
+    </view>
+    
+    <view class="dish-grid">
+      <view 
+        wx:for="{{ dishes }}" 
+        wx:key="_id" 
+        class="dish-card"
+        data-dish-id="{{ item._id }}"
+        data-dish-name="{{ item.name }}"
+        bindtap="toggleDish"
+      >
+        <view class="dish-image">
+          <text class="dish-emoji">🍲</text>
+        </view>
+        <text class="dish-name">{{ item.name }}</text>
+        <text class="dish-price text-muted text-sm">¥{{ item.price }}</text>
+        <view class="dish-check {{ item.selected ? 'checked' : '' }}">
+          <text wx:if="{{ item.selected }}">✓</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view 
+    class="btn-primary" 
+    bindtap="handleSave"
+    disabled="{{ isLoading }}"
+  >
+    <text wx:if="{{ !isLoading }}">保存偏好</text>
+    <text wx:else>保存中...</text>
+  </view>
+</view>
